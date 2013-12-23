@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceModelAbstraction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schemas/ServiceModel_v1_0.xsd">
+  <ServiceModel clientNamespaceName="ProtonIT.CRM.Proxyclient"
+            contractNamespaceName="ProtonIT.CRM"
+            serverNamespaceName="ProtonIT.CRM.Server">
+    <Service name="CustomerService">
+      <Operation name="GetCustomerContacts" semanticTypeName="ProtonIT.CRM.GetCustomerContacts">
+        <Parameter dataType="bool" name="FilterOnlyReferenceAllowing" semanticTypeName="Undefined"/>
+        <ReturnValue dataType="Contact" name="Contacts" semanticTypeName="ProtonIT.CRM.Contact" isArray="true" />
+      </Operation>
+    </Service>
+    <DataContract name="CompanyContact" semanticTypeName="ProtonIT.CRM.CompanyContact">
+      <Property name="ID" dataType="string" semanticTypeName="ProtonIT.CRM.ID"/>
+      <Property name="FirstName" dataType="string" semanticTypeName="ProtonIT.CRM.Contact.FirstName"/>
+      <Property name="LastName" dataType="string" semanticTypeName="ProtonIT.CRM.Contact.LastName"/>
+      <Property name="CompanyName" dataType="string" semanticTypeName="ProtonIT.CRM.Company.PublicName"/>
+      <Property name="CompanyDescription" dataType="string" semanticTypeName="ProtonIT.CRM.Description"/>
+    </DataContract>
+  </ServiceModel>
+</ServiceModelAbstraction>

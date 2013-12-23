@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceModelAbstraction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schemas/ServiceModel_v1_0.xsd">
+  <ServiceModel clientNamespaceName="ProtonIT.CMS.Proxyclient"
+            contractNamespaceName="ProtonIT.CMS"
+            serverNamespaceName="ProtonIT.CMS.Server">
+    <Service name="PublicContentService">
+      <Operation name="GetReferenceCustomers" semanticTypeName="ProtonIT.CMS.GetReferenceCustomers">
+        <UsesOperation name="GetReferenceAllowingCustomersFromCMS" semanticTypeName="ProtonIT.CMS.GetCustomerContacts"/>
+        <ReturnValue dataType="Customer" name="CustomerList" isArray="true" semanticTypeName="ProtonIT.CMS.Customer"/>
+      </Operation>
+      <Operation name="GetProductCatalogues" semanticTypeName="ProtonIT.CMS.GetProductCatalogues">
+        <UsesOperation name="GetProductsFromERP" semanticTypeName="ProtonIT.ERP.GetProducts"/>
+        <ReturnValue dataType="ProductCatalogue" name="SeasonActiveCatalogues" isArray="true" semanticTypeName="ProtonIT.CMS.ProductCatalogue" />
+      </Operation>
+    </Service>
+    <DataContract name="ProductCatalogue" semanticTypeName="ProtonIT.CMS.ProductCatalogue">
+      <Property name="CatalogueName" dataType="string" semanticTypeName="Undefined" />
+      <Property name="Products" dataType="Product" isArray="true" semanticTypeName="Undefined"/>      
+    </DataContract>
+    <DataContract name="Product" semanticTypeName="ProtonIT.CMS.Product">
+      <Property name="Name" dataType="string" semanticTypeName="Undefined"/>
+      <Property name="Description" dataType="string" semanticTypeName="Undefined"/>
+    </DataContract>
+    <DataContract name="Customer" semanticTypeName="ProtonIT.CMS.Customer">
+      <Property name="CompanyName" dataType="string" semanticTypeName="Undefined"/>
+      <Property name="CompanyDescription" dataType="string" semanticTypeName="Undefined"/>
+    </DataContract>
+  </ServiceModel>
+</ServiceModelAbstraction>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceModelAbstraction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schemas/ServiceModel_v1_0.xsd">
+	<ServiceModel clientNamespaceName="ProtonIT.ERP.Proxyclient" 
+            contractNamespaceName="ProtonIT.ERP" 
+            serverNamespaceName="ProtonIT.ERP.Server">
+    <Service name="ProductService">
+      <Operation name="GetProducts" semanticTypeName="ProtonIT.ERP.GetProducts">
+        <Parameter dataType="string" name="Category" semanticTypeName="ProtonIT.ERP.CategoryName"/>
+        <ReturnValue dataType="Product" name="ProductList" semanticTypeName="ProtonIT.ERP.Product" isArray="true"/>
+      </Operation>    
+    </Service>
+    <DataContract name="Product" semanticTypeName="ProtonIT.ERP.Product">
+      <Property name="ID" dataType="string" semanticTypeName="ProtonIT.ERP.ID"/>
+      <Property name="Name" dataType="string" semanticTypeName="ProtonIT.ERP.Name"/>
+      <Property name="Description" dataType="string" semanticTypeName="ProtonIT.ERP.Description"/>
+      <Property name="Categories" dataType="Category" isArray="true" semanticTypeName="ProtonIT.ERP.Category"/>
+    </DataContract>
+  </ServiceModel>
+</ServiceModelAbstraction>
