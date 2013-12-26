@@ -7,7 +7,12 @@
       <Operation name="GetProducts" semanticTypeName="ProtonIT.ERP.GetProducts">
         <Parameter dataType="string" name="Category" semanticTypeName="ProtonIT.ERP.CategoryName"/>
         <ReturnValue dataType="Product" name="ProductList" semanticTypeName="ProtonIT.ERP.Product" isArray="true"/>
-      </Operation>    
+      </Operation>
+      <Operation name="GetPublicProducts" semanticTypeName="CompatibleCompany.ERP.GetAdvancedProducts">
+        <Parameter dataType="string" name="Category" semanticTypeName="ProtonIT.ERP.CategoryName"/>
+        <Parameter dataType="bool" name="ReturnOnlyPublicProducts" semanticTypeName="Undefined"/>
+        <ReturnValue dataType="Product" name="ProductList" semanticTypeName="ProtonIT.ERP.Product" isArray="true"/>
+      </Operation>
     </Service>
     <DataContract name="Product" semanticTypeName="ProtonIT.ERP.Product">
       <Property name="ID" dataType="string" semanticTypeName="ProtonIT.ERP.ID"/>
