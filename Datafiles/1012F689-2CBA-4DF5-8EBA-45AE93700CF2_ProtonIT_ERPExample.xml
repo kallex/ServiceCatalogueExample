@@ -6,6 +6,7 @@
     <Service name="ProductService">
       <Operation name="GetProducts" semanticTypeName="ProtonIT.ERP.GetProducts">
         <Parameter dataType="string" name="Category" semanticTypeName="ProtonIT.ERP.CategoryName"/>
+        <RequiresContext name="CurrentContext" dataType="CurrentContext" semanticTypeName="ProtonIT.CommonContext.CurrentContext"/>
         <ReturnValue dataType="Product" name="ProductList" semanticTypeName="ProtonIT.ERP.Product" isArray="true"/>
       </Operation>    
     </Service>

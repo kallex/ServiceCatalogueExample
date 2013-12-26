@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceModelAbstraction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Schemas/ServiceModel_v1_0.xsd">
+	<ServiceModel clientNamespaceName="ProtonIT.CommonContext.ClientSide" 
+            contractNamespaceName="ProtonIT.CommonContext" 
+            serverNamespaceName="ProtonIT.CommonContext.Server">
+    <Service name="ContextService">
+      <Operation name="GetCurrentContext" semanticTypeName="ProtonIT.CommonContext.GetCurrentContext">
+        <ReturnValue dataType="CurrentContext" name="CurrentContext" semanticTypeName="ProtonIT.CommonContext.CurrentContext" />
+      </Operation>
+    </Service>
+    <DataContract name="CurrentContext" semanticTypeName="ProtonIT.CommonContext.CurrentContext">
+      <Property name="ContextID" dataType="string" semanticTypeName="ProtonIT.CommonContext.ID"/>
+      <Property name="UserID" dataType="string" semanticTypeName="ProtonIT.CommonContext.ID"/>
+      <Property name="UserRoles" dataType="string" isArray="true" semanticTypeName="ProtonIT.CommonContext.Role"/>
+    </DataContract>
+  </ServiceModel>
+</ServiceModelAbstraction>

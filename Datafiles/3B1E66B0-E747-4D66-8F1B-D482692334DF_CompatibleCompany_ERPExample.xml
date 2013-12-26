@@ -6,11 +6,13 @@
     <Service name="ProductService">
       <Operation name="GetProducts" semanticTypeName="ProtonIT.ERP.GetProducts">
         <Parameter dataType="string" name="Category" semanticTypeName="ProtonIT.ERP.CategoryName"/>
+        <RequiresContext name="CurrentContext" dataType="CurrentContext" semanticTypeName="ProtonIT.CommonContext.CurrentContext"/>
         <ReturnValue dataType="Product" name="ProductList" semanticTypeName="ProtonIT.ERP.Product" isArray="true"/>
       </Operation>
       <Operation name="GetPublicProducts" semanticTypeName="CompatibleCompany.ERP.GetAdvancedProducts">
         <Parameter dataType="string" name="Category" semanticTypeName="ProtonIT.ERP.CategoryName"/>
         <Parameter dataType="bool" name="ReturnOnlyPublicProducts" semanticTypeName="Undefined"/>
+        <RequiresContext name="CurrentContext" dataType="CurrentContext" semanticTypeName="ProtonIT.CommonContext.CurrentContext"/>
         <ReturnValue dataType="Product" name="ProductList" semanticTypeName="ProtonIT.ERP.Product" isArray="true"/>
       </Operation>
     </Service>

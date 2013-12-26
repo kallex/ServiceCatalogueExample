@@ -5,10 +5,12 @@
             serverNamespaceName="ProtonIT.CMS.Server">
     <Service name="PublicContentService">
       <Operation name="GetReferenceCustomers" semanticTypeName="ProtonIT.CMS.GetReferenceCustomers">
+        <RequiresContext name="CurrentContext" dataType="CurrentContext" semanticTypeName="ProtonIT.CommonContext.CurrentContext"/>
         <UsesOperation name="GetReferenceAllowingCustomersFromCMS" semanticTypeName="ProtonIT.CMS.GetCustomerContacts"/>
         <ReturnValue dataType="Customer" name="CustomerList" isArray="true" semanticTypeName="ProtonIT.CMS.Customer"/>
       </Operation>
       <Operation name="GetProductCatalogues" semanticTypeName="ProtonIT.CMS.GetProductCatalogues">
+        <RequiresContext name="CurrentContext" dataType="CurrentContext" semanticTypeName="ProtonIT.CommonContext.CurrentContext"/>
         <UsesOperation name="GetProductsFromERP" semanticTypeName="ProtonIT.ERP.GetProducts"/>
         <ReturnValue dataType="ProductCatalogue" name="SeasonActiveCatalogues" isArray="true" semanticTypeName="ProtonIT.CMS.ProductCatalogue" />
       </Operation>

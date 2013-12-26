@@ -6,6 +6,7 @@
     <Service name="CustomerService">
       <Operation name="GetCustomerContacts" semanticTypeName="ProtonIT.CRM.GetCustomerContacts">
         <Parameter dataType="bool" name="FilterOnlyReferenceAllowing" semanticTypeName="Undefined"/>
+        <RequiresContext name="CurrentContext" dataType="CurrentContext" semanticTypeName="ProtonIT.CommonContext.CurrentContext"/>
         <ReturnValue dataType="Contact" name="Contacts" semanticTypeName="ProtonIT.CRM.Contact" isArray="true" />
       </Operation>
     </Service>
